@@ -71,9 +71,6 @@
                 <a class="nav-group-task-link" href="Classes/Closure.html">Closure</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Classes/ClosureHolder.html">ClosureHolder</a>
-              </li>
-              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Classes/ClosureNotifyData.html">ClosureNotifyData</a>
               </li>
               <li class="nav-group-task">
@@ -89,19 +86,16 @@
                 <a class="nav-group-task-link" href="Classes/FlagsValue.html">FlagsValue</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Classes/InitiallyUnowned.html">InitiallyUnowned</a>
+                <a class="nav-group-task-link" href="Classes/GWeak.html">GWeak</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Classes/InitiallyUnownedClass.html">InitiallyUnownedClass</a>
+                <a class="nav-group-task-link" href="Classes/InitiallyUnowned.html">InitiallyUnowned</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Classes/InterfaceInfo.html">InterfaceInfo</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Classes/Object.html">Object</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Classes/ObjectClass.html">ObjectClass</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Classes/ObjectConstructParam.html">ObjectConstructParam</a>
@@ -218,9 +212,6 @@
                 <a class="nav-group-task-link" href="Classes/TypeModule.html">TypeModule</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Classes/TypeModuleClass.html">TypeModuleClass</a>
-              </li>
-              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Classes/TypePlugin.html">TypePlugin</a>
               </li>
               <li class="nav-group-task">
@@ -304,18 +295,6 @@
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Enums/BindingPropertyName.html">BindingPropertyName</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Enums/BindingSignalName.html">BindingSignalName</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Enums/InitiallyUnownedSignalName.html">InitiallyUnownedSignalName</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Enums/ObjectSignalName.html">ObjectSignalName</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Enums/TypeModuleSignalName.html">TypeModuleSignalName</a>
               </li>
             </ul>
           </li>
@@ -906,6 +885,9 @@
                 <a class="nav-group-task-link" href="Protocols/FlagsValueProtocol.html">FlagsValueProtocol</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Protocols/GWeakCapturing.html">GWeakCapturing</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Protocols/InitiallyUnownedClassProtocol.html">InitiallyUnownedClassProtocol</a>
               </li>
               <li class="nav-group-task">
@@ -1399,7 +1381,15 @@
 
 <p>A Swift wrapper around gobject-2.x that is largely auto-generated from gobject-introspection.
 For up to date (auto-generated) reference documentation, see <a href="https://rhx.github.io/SwiftGObject/">https://rhx.github.io/SwiftGObject/</a></p>
+
+<p><img src="https://github.com/rhx/SwiftGObject/workflows/macOS%2011/badge.svg" alt="macOS 11 build">
+<img src="https://github.com/rhx/SwiftGObject/workflows/macOS%2010.15/badge.svg" alt="macOS 10.15 build">
+<img src="https://github.com/rhx/SwiftGObject/workflows/Ubuntu%2020.04/badge.svg" alt="Ubuntu 20.04 build">
+<img src="https://github.com/rhx/SwiftGObject/workflows/Ubuntu%2018.04/badge.svg" alt="Ubuntu 18.04 build"></p>
 <h2 id='what-is-new' class='heading'>What is new?</h2>
+
+<p>The current version introduces a new build system and signal generation code contributed by Mikoláš Stuchlík (see the <strong>Building</strong> Section below).</p>
+<h3 id='other-notable-changes' class='heading'>Other notable changes</h3>
 
 <p>Version 11 introduces a new type system into <code>gir2swift</code>,
 to ensure it has a representation of the underlying types.
@@ -1408,7 +1398,6 @@ As a consequence, accessors can accept and return idiomatic Swift rather than
 underlying types or pointers.
 This means that a lot of the changes will be source-breaking for code that
 was compiled against libraries built with earlier versions of <code>gir2swift</code>.</p>
-<h3 id='notable-changes' class='heading'>Notable changes</h3>
 
 <ul>
 <li>Uses the namespace referenced in the <code>gir</code> file</li>
@@ -1463,13 +1452,34 @@ sudo apt install libglib2.0-dev glib-networking gobject-introspection libgirepos
 <pre class="highlight plaintext"><code>brew update
 brew install glib glib-networking gobject-introspection pkg-config
 </code></pre>
+<h2 id='usage' class='heading'>Usage</h2>
+
+<p>Normally, you don&rsquo;t build this package directly (but for testing you can - see &lsquo;Building&rsquo; below). Instead you need to embed SwiftGObject into your own project using the <a href="https://swift.org/package-manager/">Swift Package Manager</a>.  After installing the prerequisites (see &lsquo;Prerequisites&rsquo; below), add <code>SwiftGObject</code> as a dependency to your <code>Package.swift</code> file, e.g.:</p>
+<pre class="highlight plaintext"><code>// swift-tools-version:5.3
+
+import PackageDescription
+
+let package = Package(name: "MyPackage",
+    dependencies: [
+        .package(name: "GLibObject", url: "https://github.com/rhx/SwiftGObject.git", .branch("main")),
+    ],
+    targets: [.target(name: "MyPackage", dependencies: ["GLibObject"])]
+)
+</code></pre>
 <h2 id='building' class='heading'>Building</h2>
 
-<p>Normally, you don&rsquo;t build this package directly, but you embed it into your own project (see &lsquo;Embedding&rsquo; below).  However, you can build and test this module separately to ensure that everything works.  Make sure you have all the prerequisites installed (see above).  After that, you can simply clone this repository and build the command line executable (be patient, this will download all the required dependencies and take a while to compile) using</p>
+<p>Normally, you don&rsquo;t build this package directly, but you embed it into your own project (see &lsquo;Usage&rsquo; above).  However, you can build and test this module separately to ensure that everything works.  Make sure you have all the prerequisites installed (see above).  After that, you can simply clone this repository and build the command line executable (be patient, this will download all the required dependencies and take a while to compile) using</p>
 <pre class="highlight plaintext"><code>git clone https://github.com/rhx/SwiftGObject.git
 cd SwiftGObject
-./build.sh
-./test.sh
+./run-gir2swift.sh
+swift build
+swift test
+</code></pre>
+
+<p>Please note that on macOS, due to a bug currently in the Swift Package Manager,
+you need to pass in the build flags manually, i.e. instead of <code>swift build</code> and <code>swift test</code> you can run</p>
+<pre class="highlight plaintext"><code>swift build `./run-gir2swift.sh flags -noUpdate`
+swift test  `./run-gir2swift.sh flags -noUpdate`
 </code></pre>
 <h3 id='xcode' class='heading'>Xcode</h3>
 
@@ -1502,6 +1512,14 @@ error: unable to invoke subcommand: /Applications/Xcode.app/Contents/Developer/T
 <pre class="highlight plaintext"><code>sudo xcode-select -s /Applications/Xcode.app
 xcode-select --install
 </code></pre>
+<h3 id='known-issues' class='heading'>Known Issues</h3>
+
+<ul>
+<li>The current build system does not support directory paths with spaces (e.g. the <code>My Drive</code> directory used by Google Drive File Stream).</li>
+<li>BUILD_DIR is not supported in the current build system.</li>
+</ul>
+
+<p>As a workaround, you can use the old build scripts, e.g. <code>./build.sh</code> instead of <code>run-gir2swift.sh</code> and <code>swift build</code> to build a package.</p>
 
           </div>
         </section>
@@ -1510,7 +1528,7 @@ xcode-select --install
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2021 <a class="link" href="https://experts.griffith.edu.au/9237-rene-hexel" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2021-01-09)</p>
+      <p>&copy; 2021 <a class="link" href="https://experts.griffith.edu.au/9237-rene-hexel" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2021-01-16)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

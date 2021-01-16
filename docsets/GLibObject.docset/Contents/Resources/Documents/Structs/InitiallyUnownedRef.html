@@ -72,9 +72,6 @@
                 <a class="nav-group-task-link" href="../Classes/Closure.html">Closure</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Classes/ClosureHolder.html">ClosureHolder</a>
-              </li>
-              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/ClosureNotifyData.html">ClosureNotifyData</a>
               </li>
               <li class="nav-group-task">
@@ -90,19 +87,16 @@
                 <a class="nav-group-task-link" href="../Classes/FlagsValue.html">FlagsValue</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Classes/InitiallyUnowned.html">InitiallyUnowned</a>
+                <a class="nav-group-task-link" href="../Classes/GWeak.html">GWeak</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Classes/InitiallyUnownedClass.html">InitiallyUnownedClass</a>
+                <a class="nav-group-task-link" href="../Classes/InitiallyUnowned.html">InitiallyUnowned</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/InterfaceInfo.html">InterfaceInfo</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/Object.html">Object</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Classes/ObjectClass.html">ObjectClass</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/ObjectConstructParam.html">ObjectConstructParam</a>
@@ -219,9 +213,6 @@
                 <a class="nav-group-task-link" href="../Classes/TypeModule.html">TypeModule</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Classes/TypeModuleClass.html">TypeModuleClass</a>
-              </li>
-              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/TypePlugin.html">TypePlugin</a>
               </li>
               <li class="nav-group-task">
@@ -305,18 +296,6 @@
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Enums/BindingPropertyName.html">BindingPropertyName</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Enums/BindingSignalName.html">BindingSignalName</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Enums/InitiallyUnownedSignalName.html">InitiallyUnownedSignalName</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Enums/ObjectSignalName.html">ObjectSignalName</a>
-              </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Enums/TypeModuleSignalName.html">TypeModuleSignalName</a>
               </li>
             </ul>
           </li>
@@ -907,6 +886,9 @@
                 <a class="nav-group-task-link" href="../Protocols/FlagsValueProtocol.html">FlagsValueProtocol</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/GWeakCapturing.html">GWeakCapturing</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Protocols/InitiallyUnownedClassProtocol.html">InitiallyUnownedClassProtocol</a>
               </li>
               <li class="nav-group-task">
@@ -1399,7 +1381,7 @@
               <div class="declaration">
                 <div class="language">
                   
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">InitiallyUnownedRef</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/InitiallyUnownedProtocol.html">InitiallyUnownedProtocol</a></span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">InitiallyUnownedRef</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/InitiallyUnownedProtocol.html">InitiallyUnownedProtocol</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/GWeakCapturing.html">GWeakCapturing</a></span></code></pre>
 
                 </div>
               </div>
@@ -1412,7 +1394,7 @@ are private to the <code>GInitiallyUnowned</code> implementation and should neve
 accessed directly.</p>
 
               <div class="slightly-smaller">
-                <a href="https://github.com/rhx/SwiftGObject/tree/generated/Sources/GLibObject/GObject-2.0-InitiallyUnowned.swift#L31-L35">Show on GitHub</a>
+                <a href="https://github.com/rhx/SwiftGObject/tree/generated/Sources/GLibObject/GObject-2.0-Binding-InitiallyUnowned.swift#L682-L686">Show on GitHub</a>
               </div>
           </div>
         </section>
@@ -1449,7 +1431,7 @@ accessed directly.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGObject/tree/generated/Sources/GLibObject/GObject-2.0-InitiallyUnowned.swift#L34">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGObject/tree/generated/Sources/GLibObject/GObject-2.0-Binding-InitiallyUnowned.swift#L685">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1493,7 +1475,7 @@ accessed directly.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGObject/tree/generated/Sources/GLibObject/GObject-2.0-InitiallyUnowned.swift#L39-L41">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGObject/tree/generated/Sources/GLibObject/GObject-2.0-Binding-InitiallyUnowned.swift#L690-L692">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1524,7 +1506,7 @@ accessed directly.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGObject/tree/generated/Sources/GLibObject/GObject-2.0-InitiallyUnowned.swift#L44-L46">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGObject/tree/generated/Sources/GLibObject/GObject-2.0-Binding-InitiallyUnowned.swift#L695-L697">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1555,7 +1537,7 @@ accessed directly.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGObject/tree/generated/Sources/GLibObject/GObject-2.0-InitiallyUnowned.swift#L49-L52">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGObject/tree/generated/Sources/GLibObject/GObject-2.0-Binding-InitiallyUnowned.swift#L700-L703">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1586,7 +1568,7 @@ accessed directly.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGObject/tree/generated/Sources/GLibObject/GObject-2.0-InitiallyUnowned.swift#L55-L58">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGObject/tree/generated/Sources/GLibObject/GObject-2.0-Binding-InitiallyUnowned.swift#L706-L709">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1617,7 +1599,7 @@ accessed directly.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGObject/tree/generated/Sources/GLibObject/GObject-2.0-InitiallyUnowned.swift#L61-L64">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGObject/tree/generated/Sources/GLibObject/GObject-2.0-Binding-InitiallyUnowned.swift#L712-L715">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1648,7 +1630,7 @@ accessed directly.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGObject/tree/generated/Sources/GLibObject/GObject-2.0-InitiallyUnowned.swift#L67-L70">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGObject/tree/generated/Sources/GLibObject/GObject-2.0-Binding-InitiallyUnowned.swift#L718-L721">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1679,7 +1661,38 @@ accessed directly.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGObject/tree/generated/Sources/GLibObject/GObject-2.0-InitiallyUnowned.swift#L73-L75">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGObject/tree/generated/Sources/GLibObject/GObject-2.0-Binding-InitiallyUnowned.swift#L724-L726">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10GLibObject19InitiallyUnownedRefV7unownedyACxAA0cD8ProtocolRzlFZ"></a>
+                    <a name="//apple_ref/swift/Method/unowned(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10GLibObject19InitiallyUnownedRefV7unownedyACxAA0cD8ProtocolRzlFZ">unowned(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This factory is syntactic sugar for setting weak pointers wrapped in <code><a href="../Classes/GWeak.html">GWeak&lt;T&gt;</a></code></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@inlinable</span>
+<span class="kd">static</span> <span class="kd">func</span> <span class="k">unowned</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">other</span><span class="p">:</span> <span class="kt">T</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">InitiallyUnownedRef</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/InitiallyUnownedProtocol.html">InitiallyUnownedProtocol</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/rhx/SwiftGObject/tree/generated/Sources/GLibObject/GObject-2.0-Binding-InitiallyUnowned.swift#L729">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1711,7 +1724,7 @@ accessed directly.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGObject/tree/generated/Sources/GLibObject/GObject-2.0-InitiallyUnowned.swift#L79-L81">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGObject/tree/generated/Sources/GLibObject/GObject-2.0-Binding-InitiallyUnowned.swift#L733-L735">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1743,7 +1756,7 @@ accessed directly.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGObject/tree/generated/Sources/GLibObject/GObject-2.0-InitiallyUnowned.swift#L85-L87">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGObject/tree/generated/Sources/GLibObject/GObject-2.0-Binding-InitiallyUnowned.swift#L739-L741">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1775,7 +1788,7 @@ accessed directly.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGObject/tree/generated/Sources/GLibObject/GObject-2.0-InitiallyUnowned.swift#L91-L93">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGObject/tree/generated/Sources/GLibObject/GObject-2.0-Binding-InitiallyUnowned.swift#L745-L747">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1807,7 +1820,7 @@ accessed directly.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGObject/tree/generated/Sources/GLibObject/GObject-2.0-InitiallyUnowned.swift#L97-L99">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGObject/tree/generated/Sources/GLibObject/GObject-2.0-Binding-InitiallyUnowned.swift#L751-L753">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1839,7 +1852,7 @@ accessed directly.</p>
                         </div>
                       </div>
                       <div class="slightly-smaller">
-                        <a href="https://github.com/rhx/SwiftGObject/tree/generated/Sources/GLibObject/GObject-2.0-InitiallyUnowned.swift#L103-L105">Show on GitHub</a>
+                        <a href="https://github.com/rhx/SwiftGObject/tree/generated/Sources/GLibObject/GObject-2.0-Binding-InitiallyUnowned.swift#L757-L759">Show on GitHub</a>
                       </div>
                     </section>
                   </div>
@@ -1852,7 +1865,7 @@ accessed directly.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2021 <a class="link" href="https://experts.griffith.edu.au/9237-rene-hexel" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2021-01-09)</p>
+      <p>&copy; 2021 <a class="link" href="https://experts.griffith.edu.au/9237-rene-hexel" target="_blank" rel="external">Ren&eacute;&nbsp;Hexel</a>. All rights reserved. (Last updated: 2021-01-16)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
