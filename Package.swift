@@ -6,8 +6,8 @@ let package = Package(
     name: "GLibObject",
     products: [ .library(name: "GLibObject", targets: ["GLibObject"]), ],
     dependencies: [
-        .package(name: "gir2swift", url: "https://github.com/rhx/gir2swift.git", .branch("main")),
-        .package(name: "GLib", url: "https://github.com/rhx/SwiftGLib.git", .branch("main"))
+        .package(name: "gir2swift", url: "https://github.com/mikolasstuchlik/gir2swift.git", .branch("main")),
+        .package(name: "GLib", url: "https://github.com/mikolasstuchlik/SwiftGLib.git", .branch("main"))
     ],
     targets: [
         .target(name: "GLibObject", dependencies: ["GObjectCHelpers", "GLib"]),
